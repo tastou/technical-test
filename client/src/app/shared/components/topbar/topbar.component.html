@@ -1,0 +1,15 @@
+<div class="w-full flex justify-between items-center text-sm font-medium px-4 md:px-[13rem] py-2 bg-tt-primary text-white">
+  <div class="flex items-center gap-10 text">
+    <div class="px-2">
+      <img src="assets/images/logo.png" class="w-[8rem]" alt="LOGO" srcset="">
+    </div>
+    <ul class="flex items-center gap-3">
+      <li *ngFor="let link of links" class="block">
+        <a class="block" [routerLink]="link.url" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">{{ link.label }}</a>
+      </li>
+    </ul>
+  </div>
+  <ul class="px-2">
+    <li class="cursor-pointer">Cart</li>
+  </ul>
+</div>

@@ -1,0 +1,17 @@
+<div class="w-full flex justify-between px-4 md:px-[13rem] items-center bg-gray-200 py-2">
+  <div class="px-2 text-[14px] flex items-center text-gray-500">
+
+    <p class="px-1">
+      MerciYanis Music Store
+    </p>
+    &copy;
+    {{ currentYear }}
+  </div>
+  <ul class="px-2 flex items-center gap-2">
+    <li *ngFor="let link of links">
+      <a [href]="link.url">
+        <appCircleSocialMedia [icon]="link.icon??''" [id]="link.label"></appCircleSocialMedia>
+      </a>
+    </li>
+  </ul>
+</div>
