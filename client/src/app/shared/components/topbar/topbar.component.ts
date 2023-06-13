@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ILink } from '../../interfaces/ilink';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'appTopbar',
@@ -8,6 +9,10 @@ import { ILink } from '../../interfaces/ilink';
 })
 export class TopbarComponent implements OnInit{
   links: Array<ILink>
+  @Output() gotoList: EventEmitter<boolean>;
+
+  constructor(private router: Router){}
+
   ngOnInit(): void {
     this.links = [
       { label: 'Home', url: '/'},
@@ -17,6 +22,12 @@ export class TopbarComponent implements OnInit{
 
   setActiveClass = (uri: string) : string =>{
     return 'border-b-2 border-white';
+  }
+
+  toList = (): void => {
+    if(this.router.url.replace('/', '') !== 'albums'){
+      this.router.navigateByUrl('/albums').then();
+    }
   }
 
 }
