@@ -1,5 +1,5 @@
 <div class="w-full">
-  <div class="w-full py-10 flex justify-between items-center px-5 text-gray-500">
+  <div class="w-full py-5 flex justify-between items-center px-5 text-gray-500">
     <div class="flex items-center relative">
       <div class="absolute left-2">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
@@ -23,5 +23,36 @@
         </svg>
       </li>
     </ul>
+  </div>
+  <div class="w-full">
+    <div class="px-5" *ngIf="albums else loading">
+      <div class="w-full" *ngIf="showWith === 'card'">
+        <appAlbumCard></appAlbumCard>
+      </div>
+      <div class="w-full" *ngIf="showWith === 'list'">
+        <appAlbumList></appAlbumList>
+      </div>
+      <div class="w-full flex py-5 justify-center items-center">
+        <ul class="flex items-center gap-4">
+          <li class="w-8 h-8 cursor-pointer rounded-full text-[13px] flex justify-center items-center bg-gray-200 text-gray-500">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-chevron-bar-left" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M11.854 3.646a.5.5 0 0 1 0 .708L8.207 8l3.647 3.646a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 0 1 .708 0zM4.5 1a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 1 0v-13a.5.5 0 0 0-.5-.5z"/>
+            </svg>
+          </li>
+          <li class="w-8 h-8 cursor-pointer rounded-full text-[13px] flex justify-center items-center bg-gray-200 text-gray-500">
+            1
+          </li>
+          <li class="w-8 h-8 cursor-pointer rounded-full text-[13px] flex justify-center items-center bg-gray-200 text-gray-500">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-chevron-bar-right" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M4.146 3.646a.5.5 0 0 0 0 .708L7.793 8l-3.647 3.646a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708 0zM11.5 1a.5.5 0 0 1 .5.5v13a.5.5 0 0 1-1 0v-13a.5.5 0 0 1 .5-.5z"/>
+            </svg>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <ng-template class="w-full h-full flex justify-center items-center" #loading>
+        <div class="w-full h-[15rem] text-gray-400 flex justify-center items-center">Loading...</div>
+    </ng-template>
   </div>
 </div>

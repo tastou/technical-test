@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlbumsComponent implements OnInit{
   showWith: string;
+  albums: Array<any>;
 
   ngOnInit(): void {
     this.showWith = 'card';
+    this.albums = ['album 1'];
   }
 
 

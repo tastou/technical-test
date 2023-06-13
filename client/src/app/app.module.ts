@@ -9,6 +9,10 @@ import { HomeComponent } from './pages/home/home.component';
 import { AlbumsComponent } from './pages/albums/albums.component';
 import { CicleSocialMediaComponent } from './shared/components/cicle-social-media/cicle-social-media.component';
 import { SafeHtmlPipePipe } from './shared/pipes/safe-html-pipe.pipe';
+import { AlbumListComponent } from './shared/components/album-list/album-list.component';
+import { AlbumCardComponent } from './shared/components/album-card/album-card.component';
+import { AlbumCardItemComponent } from './shared/components/album-card-item/album-card-item.component';
+import { AlbumListItemComponent } from './shared/components/album-list-item/album-list-item.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { SafeHtmlPipePipe } from './shared/pipes/safe-html-pipe.pipe';
     HomeComponent,
     AlbumsComponent,
     CicleSocialMediaComponent,
-    SafeHtmlPipePipe
+    SafeHtmlPipePipe,
+    AlbumListComponent,
+    AlbumCardComponent,
+    AlbumCardItemComponent,
+    AlbumListItemComponent
   ],
   imports: [
     BrowserModule,
